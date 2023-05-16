@@ -61,9 +61,9 @@ Each video consists of several clips, each clip consists of several turns, and e
 ```
 
 #### Test Set
-Video frames, annotations, and more details of test set *will be released after 21st, May, 2023*.
+We updated the test set data in [BaiduNetDisk](https://pan.baidu.com/s/1paNUmL_qgzYpVQMyeA4whA?pwd=gy5s).
 
-Example test data for Tasks 1 and 2:
+Example test data for Tasks 1 and 2 in `test-scene_session_task.json`:
 ```
 {"Riverdale_S04E03": [
     {"vid": "Riverdale_S04E03_clip_000", "subs": [
@@ -78,7 +78,17 @@ Example test data for Tasks 1 and 2:
 
 In task 1 (Dialogue Scene Identification) and task 2 (Dialogue Segment Identification), you need to predict 0 or 1 as the scene/segment label for each turn.
 
-Example test data for Tasks 3 and 4:
+Your predictions for each task should be formatted as follows: [example.json](https://github.com/yellow-binary-tree/NLPCC-2023-Shared-Task-10/blob/master/example_submission/test-scene_session_random_baseline.json)
+
+```
+{
+    "Riverdale_S04E03_clip_000": [1, 0, 0, 0, 1, ...],
+    "Riverdale_S04E03_clip_001": [0, 0, 1, 0, 0, ...],
+    ...
+}
+```
+
+Example test data for Tasks 3 and 4 in `test-dialog_response_task.json`:
 ```
 {"Riverdale_S04E03": [
     {"vid": "Riverdale_S04E03_clip_000", "subs": [
@@ -92,16 +102,36 @@ Example test data for Tasks 3 and 4:
 }
 ```
 
-In task 3 (Dialogue Response Retrieval) and task 4 (Dialogue Response Generation), if `en_text` key is set as `__ANSWER__`, you need to replace it with your answer. In task 3, you can choose an reply from a candidate file formatted as below, and in task 4, you need to generate the reply on your own.
+In task 3 (Dialogue Response Retrieval) and task 4 (Dialogue Response Generation), if `en_text` key is set as `__ANSWER__`, you need to replace it with your answer. In task 3, you can choose an reply from a candidate file `test-candidates.json` formatted as below, and in task 4, you need to generate the reply on your own. Note that you only need to choose from / generate English replies, and Chinese dialog is only for reference.
 
 ```
 {
-    "Riverdale_S04E03_clip_000_turn_011": ["candidate1", "candidate2", ..., "candidate40"],
-    "Riverdale_S04E03_clip_000_turn_030": ["candidate1", "candidate2", ..., "candidate40"],
+    "Better.Call.Saul_S03E02_clip_000_turn_003": [{"en_text": "en_text1", "ch_text": "中文文本1"}, {"en_text": "en_text2", "ch_text": "中文文本2"}],
+    "Better.Call.Saul_S03E02_clip_001_turn_007": [{"en_text": "en_text1", "ch_text": "中文文本1"}, {"en_text": "en_text2", "ch_text": "中文文本2"}],
     ...
 }
-
 ```
+
+For task 3, your predictions should be formatted as follows: [example.json](https://github.com/yellow-binary-tree/NLPCC-2023-Shared-Task-10/blob/master/example_submission/test-choice_random_baseline.json)
+```
+{
+    "Better.Call.Saul_S03E02_clip_000_turn_003": 3,
+    "Better.Call.Saul_S03E02_clip_000_turn_007": 8,
+    ...
+}
+```
+
+For task 4, your predictions should be formatted as follows: [example.json](https://github.com/yellow-binary-tree/NLPCC-2023-Shared-Task-10/blob/master/example_submission/test-gt_random_baseline.json)
+```
+{
+    "Better.Call.Saul_S03E02_clip_000_turn_003": "Your reply for this turn",
+    "Better.Call.Saul_S03E02_clip_000_turn_007": "Your reply for this turn",
+    ...
+}
+```
+
+## Submission and Leaderboard
+We use EvalAI as the evaulation system of this task. This is the [challenge homepage](https://eval.ai/web/challenges/challenge-page/2050/overview)
 
 ## Contact
 If you have any questions about this task, please send email to wangyueqian@pku.edu.cn
