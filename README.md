@@ -131,7 +131,9 @@ For task 4, your predictions should be formatted as follows: [example.json](http
 ```
 
 ## Submission and Leaderboard
-We use EvalAI as the evaulation system of this task. This is the [challenge homepage](https://eval.ai/web/challenges/challenge-page/2050/overview)
+We use EvalAI as the evaulation system of this task. This is the [challenge homepage](https://eval.ai/web/challenges/challenge-page/2050/overview).
+
+It is still under review by the EvalAI Team so you may not be able to visit this site now.
 
 ## Contact
 If you have any questions about this task, please send email to wangyueqian@pku.edu.cn
