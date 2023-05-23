@@ -131,9 +131,10 @@ For task 4, your predictions should be formatted as follows: [example.json](http
 ```
 
 ## Submission and Leaderboard
-We use EvalAI as the evaulation system of this task. This is the [challenge homepage](https://eval.ai/web/challenges/challenge-page/2050/overview).
+We use CodaLab as the evaulation platform of this task. This is the [competition homepage](https://codalab.lisn.upsaclay.fr/competitions/13435).
 
-It is still under review by the EvalAI Team so you may not be able to visit this site now.
+After making a submission, you can see the results of the submission on the [Leaderboard](https://codalab.lisn.upsaclay.fr/competitions/13435#results), or [Participate-Submit/View Results](https://codalab.lisn.upsaclay.fr/competitions/13435#participate-submit_results)-> unfold a submission by clicking '+' -> Download output from scoring step.
 
 ## Contact
 If you have any questions about this task, please send email to wangyueqian@pku.edu.cn
+
